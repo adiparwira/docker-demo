@@ -13,7 +13,7 @@ node {
    }
    stage('docker build/push') {
      docker.withRegistry('localhost:5000', 'dockerhub') {
-       def app = docker.build("localhost:5000/aryadi/docker-nodejs-demo:${commit_id}", '.').push()
+       def app = docker.build("aryadi/docker-nodejs-demo:${commit_id}", '.').push()
      }
    }
 }
